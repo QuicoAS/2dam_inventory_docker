@@ -4,6 +4,12 @@ LABEL maintainer="Keymetrics <contact@keymetrics.io>"
 # Install pm2
 RUN npm install pm2 -g
 
+# Install ts-node globally
+RUN npm install -g ts-node
+
+# Add the global npm bin directory to the PATH
+ENV PATH="/root/.npm-global/bin:${PATH}"
+
 # Expose ports needed to use Keymetrics.io
 EXPOSE 80 443 43554
 
